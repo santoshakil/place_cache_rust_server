@@ -8,10 +8,10 @@ use log4rs::{
 };
 use std::path::PathBuf;
 
-use crate::db::DOCDIR;
+use crate::db::DATADIR;
 
 pub fn init_log4rs() -> Result<()> {
-    let path = PathBuf::from(DOCDIR.read().unwrap().clone());
+    let path = PathBuf::from(DATADIR.read().unwrap().clone());
     let file = path.join("logs.log");
     let file_path = file.as_os_str().to_str().unwrap();
 
